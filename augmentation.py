@@ -22,4 +22,6 @@ def random_gain(signal, min_gain_factor, max_gain_factor):
 
 if __name__ == "__main__":
     signal, sr = librosa.load("wav_file_path")
+    #Let's make and display a mel-scaled power (energy-squared) spectrogram
+    S = librosa.feature.melspectrogram(signal, sr=sr, n_mels=128)
     aug_signal = add_noise(signal, 0.1)
